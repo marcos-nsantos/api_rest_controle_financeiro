@@ -5,6 +5,6 @@ from .serializers import DespesaSerializer
 
 
 class DespesaViewSet(viewsets.ModelViewSet):
-    """API endpoint that allows users to be viewed, created, deleted, and edited."""
+    """API endpoint that allows users to be viewed, created, deleted, and edited despesas."""
     queryset = Despesa.objects.all()
     serializer_class = DespesaSerializer

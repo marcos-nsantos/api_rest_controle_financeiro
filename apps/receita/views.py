@@ -5,5 +5,6 @@ from .serializer import ReceitaSerializer
 
 
 class ReceitaViewSet(viewsets.ModelViewSet):
+    """API endpoint that allows users to be viewed, created, deleted, and edited receitas."""
     queryset = Receita.objects.all()
     serializer_class = ReceitaSerializer
