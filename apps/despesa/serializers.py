@@ -8,4 +8,4 @@ class DespesaSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Despesa
-        fields = ('descricao', 'valor', 'created_at', 'updated_at')
+        fields = ('url', 'descricao', 'valor', 'created_at', 'updated_at')

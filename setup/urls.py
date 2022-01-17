@@ -5,7 +5,7 @@ from rest_framework import routers
 from apps.despesa.views import DespesaViewSet
 
 router = routers.DefaultRouter()
-router.register('despesas', DespesaViewSet, basename='despesas')
+router.register('despesa', DespesaViewSet, basename='despesa')
 
 urlpatterns = [
     path('', include(router.urls)),
