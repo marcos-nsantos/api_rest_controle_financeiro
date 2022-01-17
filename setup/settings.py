@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'receita.apps.ReceitaConfig',
+    'despesa.apps.DespesaConfig',
 ]
 
 MIDDLEWARE = [
