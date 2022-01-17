@@ -1,3 +1,10 @@
-from django.shortcuts import render
+from rest_framework import viewsets
 
-# Create your views here.
+from .models.despesa_model import Despesa
+from .serializers import DespesaSerializer
+
+
+class DespesaViewSet(viewsets.ModelViewSet):
+    """API endpoint that allows users to be viewed, created, deleted, and edited."""
+    queryset = Despesa.objects.all()
+    serializer_class = DespesaSerializer
