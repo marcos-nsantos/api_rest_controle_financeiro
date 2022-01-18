@@ -7,6 +7,7 @@ class Despesa(models.Model):
 
     descricao = models.TextField(_('Descrição'), max_length=100)
     valor = models.DecimalField(_('Valor'), max_digits=10, decimal_places=2)
+    data_vencimento = models.DateField(_('Data de Vencimento'), null=True, blank=True)
     created_at = models.DateTimeField(_('Criado em'), auto_now_add=True)
     updated_at = models.DateTimeField(_('Atualizado em'), auto_now=True)
 
