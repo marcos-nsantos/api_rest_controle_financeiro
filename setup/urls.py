@@ -7,8 +7,8 @@ from apps.despesa.views import DespesaViewSet
 from apps.receita.views import ReceitaViewSet
 
 router = routers.DefaultRouter()
-router.register('receita', ReceitaViewSet, basename='receita')
-router.register('despesa', DespesaViewSet, basename='despesa')
+router.register('receitas', ReceitaViewSet, basename='receita')
+router.register('despesas', DespesaViewSet, basename='despesa')
 
 urlpatterns = [
     path('', include(router.urls)),
