@@ -1,7 +1,7 @@
 from rest_framework import viewsets
 
 from .models.expense_model import Expense
-from .serializers import ExpenseSerializer
+from .serializer import ExpenseSerializer
 
 
 class ExpenseViewSet(viewsets.ModelViewSet):
