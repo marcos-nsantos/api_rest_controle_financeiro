@@ -10,7 +10,7 @@ class ExpenseSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Expense
-        fields = ('url', 'description', 'value', 'due_date', 'created_at', 'updated_at')
+        fields = '__all__'
 
     def validate(self, attrs):
         if expense_already_exists(attrs['description'], attrs['due_date'], attrs['value']):
