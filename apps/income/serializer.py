@@ -5,12 +5,11 @@ from .validators.income_validations import income_already_exists
 
 
 class IncomeSerializer(serializers.HyperlinkedModelSerializer):
-    created_at = serializers.DateTimeField(read_only=True)
-    updated_at = serializers.DateTimeField(read_only=True)
+    """Serializer for Income model"""
 
     class Meta:
         model = Income
-        fields = '__all__'
+        exclude = ('created_at', 'updated_at')
 
     def validate(self, attrs):
         if income_already_exists(attrs['type'], attrs['description'], attrs['receipt_date'], attrs['value']):

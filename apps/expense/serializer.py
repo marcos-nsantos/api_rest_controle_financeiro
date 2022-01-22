@@ -5,12 +5,11 @@ from .validators.expense_validations import expense_already_exists
 
 
 class ExpenseSerializer(serializers.HyperlinkedModelSerializer):
-    created_at = serializers.DateTimeField(read_only=True)
-    updated_at = serializers.DateTimeField(read_only=True)
+    """Serializer for Expense Model"""
 
     class Meta:
         model = Expense
-        fields = '__all__'
+        exclude = ('created_at', 'updated_at')
 
     def validate(self, attrs):
         if expense_already_exists(attrs['type'], attrs['description'], attrs['due_date'], attrs['value']):
