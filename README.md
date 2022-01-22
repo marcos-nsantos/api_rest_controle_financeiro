@@ -46,6 +46,11 @@ Ativando ambiente virtual
 source env/bin/activate
 ```
 
+### Instalando dependências
+````sh
+pip install -r requirements.txt
+````
+
 ## Servidor de desenvolvimento
 
 #### Execute o seguinte comando
