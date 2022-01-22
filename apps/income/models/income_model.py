@@ -3,6 +3,7 @@ from django.utils.translation import gettext_lazy as _
 
 
 class Income(models.Model):
+    """Class to represent an income model."""
 
     class IncomeType(models.IntegerChoices):
         FIXED = 1, _('Fixed')
