@@ -51,6 +51,13 @@ source env/bin/activate
 pip install -r requirements.txt
 ````
 
+## Configuração
+1. Crie uma cópia do arquivo `example.env` localizado na pasta setup e renomeie para `.env`.
+2. No seu terminal com o ambiente virtual ativado, execute o comando `python -c 'from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())'` para gerar uma chave secreta.
+3. Substitua a chave secreta no arquivo `.env` com a chave gerada na variável `SECRET_KEY`.
+4. Substitua o endereço do banco de dados no arquivo `.env` com o endereço do banco de dados que você deseja utilizar na variável `DATABASE_URL`.
+5. Execute o comando `python manage.py migrate` para criar as tabelas do banco de dados.
+
 ## Servidor de desenvolvimento
 
 #### Execute o seguinte comando
