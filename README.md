@@ -4,13 +4,13 @@
 
 ## Recursos
 
-- Cria, editar, ler e excluir uma despesa
-- Cria, editar, ler e excluir uma receita
+- Cria, editar, ler e deleta despesas
+- Cria, editar, ler e deleta receitas
 
 ## Tecnologias
 
 - [Django] - O propósito do Django está no desenvolvimento de aplicações web e sites.
-- [Django REST framework] - Desenvolvimento de web API'S de forma simples e ágil
+- [Django REST framework] - Desenvolvimento de web API'S de forma simples e ágil.
 
 ## Instalação
 
