@@ -8,3 +8,4 @@ class IncomeViewSet(viewsets.ModelViewSet):
     """API endpoint that allows income to be viewed, created, deleted, and edited."""
     queryset = Income.objects.all()
     serializer_class = IncomeSerializer
+    filterset_fields = ('description',)
