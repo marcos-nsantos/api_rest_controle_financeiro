@@ -8,3 +8,4 @@ class ExpenseViewSet(viewsets.ModelViewSet):
     """API endpoint that allows expense to be viewed, created, deleted, and edited."""
     queryset = Expense.objects.all()
     serializer_class = ExpenseSerializer
+    filterset_fields = ('description',)
