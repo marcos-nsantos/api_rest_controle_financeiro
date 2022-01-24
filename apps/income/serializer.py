@@ -1,3 +1,4 @@
+from django.utils.translation import gettext_lazy as _
 from rest_framework import serializers
 
 from .models.income_model import Income
@@ -12,11 +13,6 @@ class IncomeSerializer(serializers.HyperlinkedModelSerializer):
         exclude = ('created_at', 'updated_at')
 
     def validate(self, attrs):
-        if income_already_exists(attrs['type'], attrs['description'], attrs['receipt_date'], attrs['value']):
-            raise serializers.ValidationError('Income already exists')
+        if income_already_exists(attrs['description'], attrs['receipt_date'], attrs['value']):
+            raise serializers.ValidationError(_('Income already exists'))
         return attrs
-
-    def create(self, validated_data):
-        if income_already_exists(validated_data['type'], validated_data['description'], validated_data['receipt_date']):
-            raise serializers.ValidationError('Income already exists')
-        return Income.objects.create(**validated_data)
