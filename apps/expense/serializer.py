@@ -1,3 +1,4 @@
+from django.utils.translation import gettext_lazy as _
 from rest_framework import serializers
 from .models.expense_model import Expense
 
@@ -12,11 +13,6 @@ class ExpenseSerializer(serializers.HyperlinkedModelSerializer):
         exclude = ('created_at', 'updated_at')
 
     def validate(self, attrs):
-        if expense_already_exists(attrs['type'], attrs['description'], attrs['due_date'], attrs['value']):
-            raise serializers.ValidationError('Expense already exists for this type, description, due date and value')
+        if expense_already_exists(attrs['category'], attrs['description'], attrs['due_date'], attrs['value']):
+            raise serializers.ValidationError(_('Expense already exists'))
         return attrs
-
-    def create(self, validated_data):
-        if expense_already_exists(validated_data['type'], validated_data['description'], validated_data['due_date']):
-            raise serializers.ValidationError('Expense already exists for this type, description and due date')
-        return Expense.objects.create(**validated_data)
