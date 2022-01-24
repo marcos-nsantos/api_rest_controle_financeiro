@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'django_filters',
     'income.apps.IncomeConfig',
     'expense.apps.ExpenseConfig',
+    'summary.apps.SummaryConfig',
 ]
 
 # Project root

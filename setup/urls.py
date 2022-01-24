@@ -7,8 +7,8 @@ from apps.expense.views import ExpenseViewSet
 from apps.income.views import IncomeViewSet
 
 router = routers.DefaultRouter()
-router.register('incomes', IncomeViewSet)
 router.register('expenses', ExpenseViewSet)
+router.register('incomes', IncomeViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),
@@ -16,4 +16,5 @@ urlpatterns = [
     path('api/schema/', SpectacularAPIView.as_view(), name='schema'),
     path('api/schema/swagger-ui/', SpectacularSwaggerView.as_view(url_name='schema'), name='swagger-ui'),
     path('api/schema/redoc/', SpectacularRedocView.as_view(url_name='schema'), name='redoc'),
+    path('summary/', include('apps.summary.urls')),
 ]
